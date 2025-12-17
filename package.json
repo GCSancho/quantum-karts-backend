@@ -1,0 +1,21 @@
+{
+  "name": "quantum-backend",
+  "version": "1.0.0",
+  "description": "Backend minimo para receber GameResult do Photon Quantum",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev:server": "node server.js",
+    "dev:tunnel": "npx ngrok http 3000 --log=stdout --log-format=logfmt",
+    "dev": "concurrently -k -n server,tunnel -c yellow,cyan \"npm run dev:server\" \"npm run dev:tunnel\""
+  },
+  "dependencies": {
+    "@ngrok/ngrok": "^1.6.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "ngrok": "^5.0.0-beta.2"
+  }
+}
